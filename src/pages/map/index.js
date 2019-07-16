@@ -1,5 +1,5 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, Text, Input, Map } from '@tarojs/components'
+import { View, Text, Input,Map } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 import { add, del } from '../../actions/index'
 import Clock from '../../components/clock/clock'
@@ -87,15 +87,6 @@ class Index extends Component {
   componentDidShow () { }
 
   componentDidHide () { }
-  regionchange(e) {
-    console.log(e.type)
-  }
-  markertap(e) {
-    console.log(e.markerId)
-  }
-  controltap(e) {
-    console.log(e.controlId)
-  }
   
 
   render () {
@@ -112,8 +103,9 @@ class Index extends Component {
     })
 
     return (
+      
       <View className='index'>
-      <Map id='map' longitude='113.324520' latitude='23.099994' scale='14' controls='{{controls}}' bindcontroltap='controltap' markers='{{markers}}' bindmarkertap='markertap' polyline='{{polyline}}' bindregionchange='regionchange' show-location style='width: 100%; height: 300px;'></Map>
+      <Map></Map>
       <View>TodoList应用:
         <Input className='input' type='text' value={inputVal} onInput={this.inputHandler.bind(this)}></Input>
         <Text className='add' onClick={this.addItem.bind(this)}>+</Text>
